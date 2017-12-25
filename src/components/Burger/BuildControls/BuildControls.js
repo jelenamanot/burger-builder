@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './BuildControls.css';
 
+import { formatPrice } from '../../../utils/helpers';
+
 import BuildControl from './BuildControl/BuildControl';
 
 const controls = [
@@ -12,7 +14,7 @@ const controls = [
 
 const buildControls = (props) => (
     <div className={classes.BuildControls}>
-        <p>Current price: <strong>{props.price.toFixed(2)}</strong></p>
+        <p>Current price: <strong>{formatPrice(props.price)}</strong></p>
         <div>
             {
                 controls.map(ctrl => <BuildControl
