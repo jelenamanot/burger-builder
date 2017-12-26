@@ -95,6 +95,8 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = () => {
         // alert('Continue...');
+
+        /*
         this.setState({
             loading: true
         });
@@ -126,6 +128,9 @@ class BurgerBuilder extends Component {
                     purchasing: false
                 });
             });
+
+            */
+        this.props.history.push('/checkout');
     };
 
     render() {
