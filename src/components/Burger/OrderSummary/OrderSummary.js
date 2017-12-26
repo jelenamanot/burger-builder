@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { formatPrice } from '../../../utils/helpers';
+import { formatPrice } from '../../../assets/utils/helpers';
 
 import Aux from '../../../hoc/Aux';
 import Button from '../../UI/Button/Button';

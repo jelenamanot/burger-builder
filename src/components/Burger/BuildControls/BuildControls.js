@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './BuildControls.css';
 
-import { formatPrice } from '../../../utils/helpers';
+import { formatPrice } from '../../../assets/utils/helpers';
 
 import BuildControl from './BuildControl/BuildControl';
 
