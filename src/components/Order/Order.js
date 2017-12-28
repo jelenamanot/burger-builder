@@ -22,7 +22,13 @@ const order = (props) => {
         padding: '5px'
     };
 
-    const ingredientOutput = ingredients.map(ig => <span key={ig.name} style={spanStyle}>{ig.name}</span>);
+    const ingredientOutput = ingredients.map(ig =>
+        <span
+            key={ig.name}
+            style={spanStyle}
+        >
+            {ig.name} ({ig.amount})
+        </span>);
 
     return(
         <div className={classes.Order}>
