@@ -85,9 +85,12 @@ class ContactData extends React.Component {
                         {value: 'cheapest', displayValue: 'Cheapest'}
                     ]
                 },
-                value: ''
+                value: '',
+                validation: {},
+                valid: true
             }
         },
+        formIsValid: false,
         loading: false
     };
 
@@ -154,8 +157,14 @@ class ContactData extends React.Component {
 
         updatedOrderForm[inputIdentifier] = updatedFormElement;
 
+        let formIsValid = true;
+        for(let inputIdentifier in updatedOrderForm) {
+            formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid
+        }
+
         this.setState({
-            orderForm: updatedOrderForm
+            orderForm: updatedOrderForm,
+            formIsValid: formIsValid
         });
 
     };
@@ -185,8 +194,8 @@ class ContactData extends React.Component {
                         />
                     ))
                 }
-                <Button>
-                    <span style={{color: 'green'}}>Order</span>
+                <Button btnTypeClass="Success" disabled={!this.state.formIsValid}>
+                    <span>Order</span>
                 </Button>
             </form>
         );
